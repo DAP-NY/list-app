@@ -1,0 +1,9 @@
+<div class='header'>
+    <h2 class="title">Games</h2>
+    <button class="addButton">+</button>
+</div>
+
+<li *ngFor="let game of games">
+        <span [ngStyle]="{color: processColor(game.status)}"> {{ game.name }} </span>
+        <span> {{game.rank}}</span>
+</li>
