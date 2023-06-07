@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { games } from '../constants';
+import { ListService } from '../services/list.service';
 
 @Component({
   selector: 'app-games',
@@ -7,11 +8,18 @@ import { games } from '../constants';
   styleUrls: ['./games.component.scss']
 })
 export class GamesComponent implements OnInit {
-  public games: any[] = games;
+  public games: any[];
+  public myListService: ListService;
+  public showInputs: boolean = false;
 
-  constructor() { }
+  constructor( myListService: ListService) {
+    Object.assign(this, { myListService });
+   }
 
   ngOnInit(): void {
+    this.myListService.getService().subscribe(data => {
+      this.games = data;
+  });
   }
 
   public processColor(gameStatus: string): string {
@@ -25,6 +33,21 @@ export class GamesComponent implements OnInit {
       default:
         return ''
     }
+  }
+
+  public serviceCall(): any {
+    this.myListService.getService().subscribe(data => {
+      console.log(data);
+  });
+    //console.log(this.myListService.getService());
+  }
+
+  public toggleInputs(): void {
+    this.showInputs = true;
+  }
+
+  public addToList(): void {
+    console.log('added');
   }
 
 }
