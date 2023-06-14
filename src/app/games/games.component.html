@@ -1,16 +1,24 @@
 <div class='header'>
     <h2 class="title">Games</h2>
-    <button (click)="toggleInputs()" class="addButton">+</button>
-    <div *ngIf="showInputs">
-    <input class="textinput" type="text" name="name" id="">
+    <button mat-mini-fab (click)="toggleInputs()" class="addButton">+</button>
+    <div class="inputHolder" *ngIf="showInputs">
+        <div class="textinput">
+            <custom-input [control]="gameNameFormControl" [placeholder]="'Enter Name'"></custom-input>
+        </div>
+        <div>
+            <custom-select id="gameStatus" [formCtrl]="gameStatusFormControl" label="Select Status" [items]="statusTypes"></custom-select>
+        </div>
+<!--        
         <select class="dropdown" name="status" id="">
             <option value="Completed">Completed</option>
             <option value="Started">Started</option>
             <option value="Not Started">Not Started</option>
-        </select>
-        <input class="textinput" type="text" name="rank">
-        <button (click)="addToList()" class="addButton">Add To List</button>
+        </select> -->
+        <div class="textinput">
+            <custom-input [control]="rankFormControl" [placeholder]="'Enter Rank'"> </custom-input>
+        </div>
         
+        <button mat-raised-button (click)="addToList()" class="addListButton">Add To List</button>
     </div>
 </div>
 

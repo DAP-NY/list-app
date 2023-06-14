@@ -1,9 +1,15 @@
-<h1>My Lists</h1>
-
-<button routerLink="/Movies">Movies</button>
-<button routerLink="/Games">Games</button>
-<button routerLink="/Shows">Shows</button>
-<button routerLink="/Food">Food</button>
-<button routerLink="/General">General</button>
-
-<router-outlet></router-outlet>
+<div class="AppContainer">
+    <div class="SideMenu">
+        <h1>My Lists</h1>
+        <div class="listsButton">
+            <button mat-raised-button color="primary" routerLink="/Movies">Movies</button>
+            <button mat-raised-button routerLink="/Games">Games</button>
+            <button mat-raised-button routerLink="/Shows">Shows</button>
+            <button mat-raised-button routerLink="/Food">Food</button>
+            <button mat-raised-button routerLink="/General">General</button>
+        </div>
+    </div>
+    <div class="rightContent">
+        <router-outlet></router-outlet>
+    </div>
+</div>

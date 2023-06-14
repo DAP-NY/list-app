@@ -24,6 +24,9 @@
       "dom"
     ],
     "strictPropertyInitialization": false,
+    "paths": {
+      "material": ["app/shared/angular-material"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

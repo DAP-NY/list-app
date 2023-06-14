@@ -1,0 +1,13 @@
+@import "../styles/utils";
+
+.listsButton {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+}
+
+.rightContent {
+    float: right;
+    width: 90%;
+    height: 100%;
+}

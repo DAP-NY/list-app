@@ -34,3 +34,9 @@ export interface listItem {
     rank?: number;
     status: string;
 }
+
+export const statusTypes: SelectItem[] = [
+    { display: 'Completed', value: 'COMPLETED' },
+    { display: 'Started', value: 'STARTED' },
+    { display: 'Not Started', value: 'NOTSTARTED' }
+]
