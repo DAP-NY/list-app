@@ -1,10 +1,29 @@
+@import "../../styles/utils";
+
 .header{
     display: flex;
 }
+.inputHolder {
+    display: flex;
+    margin-top: 5px;
+}
 
 .addButton {
-    height:50%;
-    width: 30px;
-    margin-top: 25px;
-    margin-left: 10px;
+    scale: .73;
+    top: -4px;
+}
+.addListButton {
+    height: 40%;
+    width: auto;
+    margin-top: 18px;
+}
+
+.textinput {
+    height: 20px;
+    margin: 20px;
+}
+
+.dropdown {
+    height: 26px;
+    margin:20px 0;
 }

@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularMaterialModule } from './shared/angular-material';
 import { AppRoutingModule } from './app-routing.module';
+import { SharedComponentsModule } from './shared/shared-component.module';
 import { AppComponent } from './app.component';
 import { GamesComponent } from './games/games.component';
 import { MoviesComponent } from './movies/movies.component';
@@ -22,7 +24,10 @@ import { GeneralComponent } from './general/general.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularMaterialModule,
+    BrowserAnimationsModule,
+    SharedComponentsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

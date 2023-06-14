@@ -1,6 +1,19 @@
 <div class='header'>
     <h2 class="title">Games</h2>
-    <button class="addButton">+</button>
+    <button mat-mini-fab (click)="toggleInputs()" class="addButton">+</button>
+    <div class="inputHolder" *ngIf="showInputs">
+        <div class="textinput">
+            <custom-input [control]="gameNameFormControl" [placeholder]="'Enter Name'"></custom-input>
+        </div>
+        <div>
+            <custom-select id="gameStatus" [formCtrl]="gameStatusFormControl" label="Select Status" [items]="statusTypes"></custom-select>
+        </div>
+        <div class="textinput">
+            <custom-input [control]="rankFormControl" [placeholder]="'Enter Rank'"> </custom-input>
+        </div>
+        
+        <button mat-raised-button (click)="addToList()" class="addListButton">Add To List</button>
+    </div>
 </div>
 
 <li *ngFor="let game of games">

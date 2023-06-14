@@ -1,0 +1,60 @@
+@import "../../node_modules/@angular/material/theming";
+@import "../../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import 'utils';
+@include mat-core();
+
+
+.mat-typography {
+    background: #F2F4F5;
+}
+
+.cdk-overlay-container {
+    /* @include stack(modal); */ 
+
+    .cdk-overlay-backdrop-showing {
+        opacity: 1;
+    }
+}
+
+.cdk-global-scrollblock {
+    overflow-y: visible;
+}
+
+.cdk-global-overlay-wrapper {
+    position: relative;
+}
+
+.cdk-overlay-pane {
+    max-width: step(120);
+    max-height: 100%;
+    margin: step(2);
+    border-radius: step(0.5);
+    -webkit-overflow-scrolling: touch;
+
+    &.toast-modal {
+        margin: 0;
+        border-radius: 0;
+    }
+
+    &.cart-edit {
+        width: 100%;
+    }
+}
+
+@keyframes modal-in {
+    0% {
+        transform: translate3d(0, 2px, 0);
+        opacity: 0;
+    }
+
+    25% {
+        transform: translate3d(0, 0, 0);
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
