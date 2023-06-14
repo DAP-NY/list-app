@@ -4,10 +4,22 @@
     position: absolute;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    height: 25%; //to allow for space between buttons
 }
 
 .rightContent {
     float: right;
     width: 90%;
     height: 100%;
+}
+
+.SideMenu {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.active {
+    background-color: #673ab7 !important;
+    color: white !important;
 }

@@ -9,7 +9,7 @@ import { FormControl, Validators } from '@angular/forms';
     styleUrls: ['./games.component.scss']
     })
 export class GamesComponent implements OnInit {
-    public games: any[] = games;
+    public games: any[];
     public myListService: ListService;
     public showInputs: boolean = false;
     public gameNameFormControl: FormControl;
@@ -22,43 +22,50 @@ export class GamesComponent implements OnInit {
     }
 
     ngOnInit(): void {
-    //   this.myListService.getService().subscribe(data => {
-    //     this.games = data;
-    // });
+      this.myListService.getService({table:'games'}).subscribe(data => {
+        this.games = data;
+    });
         this.gameNameFormControl = new FormControl({ value: '', disabled: false }, Validators.required);
         this.rankFormControl = new FormControl({ value: '', disabled: false }, Validators.required);
         this.gameStatusFormControl = new FormControl({ value: '', disabled: false }, Validators.required);
     }
 
+    /* Decide which color to show entry as depending on status */
     public processColor(gameStatus: string): string {
     switch(gameStatus) {
-        case 'Completed':
+        case 'COMPLETED':
         return 'green';
-        case 'Started':
+        case 'STARTED':
         return 'orange';
-        case 'Not Started':
+        case 'NOTSTARTED':
         return 'red';
         default:
         return ''
     }
     }
 
-  public serviceCall(): any {
-    this.myListService.getService().subscribe(data => {
-      console.log(data);
+  public refreshData(): void {
+    this.myListService.getService({table:'games'}).subscribe(data => {
+      this.games = data;
   });
-    //console.log(this.myListService.getService());
   }
 
   public toggleInputs(): void {
     this.showInputs = true;
   }
 
+  /* Takes value from input formControls and stores it as object, sends object via POST call*/
   public addToList(): void {
-    console.log('added');
-    console.log(this.gameNameFormControl.value);
-    console.log(this.rankFormControl.value);
-    console.log(this.gameStatusFormControl.value);
+    const requestData = {
+      name: this.gameNameFormControl.value,
+      rank: parseInt(this.rankFormControl.value),
+      status: this.gameStatusFormControl.value
+    };
+    this.myListService.postData(requestData).subscribe(res => {
+      if(res.message.includes('successfully')) {
+        this.refreshData();
+      }
+    });
   }
 
 }

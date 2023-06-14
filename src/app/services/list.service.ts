@@ -12,8 +12,13 @@ export class ListService {
     Object.assign(this,{http});
    }
 
-   public getService() {
+   public getService(table: any) {
     console.log('getting');
-    return this.http.get<any>('http://localhost:8080/gameData');
-}
+    return this.http.post<any>('http://localhost:8080/retrieveData', table);
+  }
+
+  public postData(requestData: any) {
+    console.log('posting');
+    return this.http.post<any>('http://localhost:8080/insertData', requestData);
+  }
 }
