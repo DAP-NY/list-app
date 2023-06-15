@@ -1,0 +1,10 @@
+<div class="SideMenu">
+    <h1>My Lists</h1>
+    <div>
+        <div class="listsButton">
+            <button *ngFor="let list of listsArray" mat-raised-button routerLinkActive="active" routerLink="/list/{{list.name}}">{{list.name}}</button>
+        </div>
+    </div>
+</div>
+
+
