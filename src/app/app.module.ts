@@ -6,20 +6,15 @@ import { AngularMaterialModule } from './shared/angular-material';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedComponentsModule } from './shared/shared-component.module';
 import { AppComponent } from './app.component';
-import { GamesComponent } from './games/games.component';
-import { MoviesComponent } from './movies/movies.component';
-import { ShowsComponent } from './shows/shows.component';
-import { FoodComponent } from './food/food.component';
-import { GeneralComponent } from './general/general.component';
+import { ListsContentComponent } from './content/content.component';
+import { ListsComponent } from './lists/lists.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    GamesComponent,
-    MoviesComponent,
-    ShowsComponent,
-    FoodComponent,
-    GeneralComponent
+    ListsContentComponent,
+    ListsComponent
   ],
   imports: [
     BrowserModule,

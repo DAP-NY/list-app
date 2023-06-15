@@ -6,6 +6,14 @@ export const games: listItem[] = [
 { name: 'Animal Crossing: New Horizons', status: 'Started', rank: 5}
 ];
 
+export const lists: any[] = [
+    {name: 'Movies'},
+    {name: 'Games'},
+    {name: 'Shows'},
+    {name: 'Food'},
+    {name: 'General'}
+]
+
 export const movies: string[] = [
     'Dark Knight',
     'Saw',
